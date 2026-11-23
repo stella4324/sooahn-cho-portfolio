@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6ef">
+  <meta name="description" content="Sooahn Cho — Integrative Data Science student interested in cognitive neuroscience, psychology, and data.">
+  <title>CV &amp; Projects | Sooahn Cho</title>
+  <style>
+    :root {
+      --ivory: #f7f6ef;
+      --white: #fffefa;
+      --ink: #27373c;
+      --muted: #68787c;
+      --line: #e2e5df;
+      --sky: #dceef1;
+      --sky-deep: #6997a1;
+      --yellow: #f4e8bb;
+      --yellow-deep: #b68f3f;
+      --green: #e4ebdf;
+      --sans: Inter, "Noto Sans", "Apple SD Gothic Neo", Arial, sans-serif;
+      --mono: "SFMono-Regular", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ivory); color: var(--ink); font: 16px/1.7 var(--sans); }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+    .mono { font: 12px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .topbar { height: 76px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 650; letter-spacing: -.02em; }
+    .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); color: #365c65; font-size: 14px; }
+    nav { display: flex; align-items: center; gap: 25px; }
+    nav a { color: var(--muted); font-size: 14px; text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .nav-contact { padding: 7px 13px; border: 1px solid #bdcdd0; border-radius: 20px; }
+    .hero { min-height: 505px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: center; padding: 68px 0 76px; }
+    .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 20px; color: var(--muted); }
+    .eyebrow::before { width: 22px; height: 1px; content: ""; background: var(--sky-deep); }
+    h1 { max-width: 620px; margin: 0; font-size: clamp(42px, 6.3vw, 72px); line-height: 1.08; letter-spacing: -.055em; font-weight: 620; }
+    h1 span { color: #608995; }
+    .hero-copy { max-width: 590px; margin: 22px 0 0; color: #586a6e; font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
+    .button { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; font-weight: 550; }
+    .button-primary { background: #527f89; color: white; }
+    .button-secondary { border: 1px solid #cbd8d8; background: transparent; }
+    .hero-art { min-height: 330px; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 8px; background: var(--sky); }
+    .sun { position: absolute; top: 43px; right: 45px; width: 74px; height: 74px; border-radius: 50%; background: var(--yellow); }
+    .orbit { position: absolute; width: 260px; height: 260px; border: 1px solid #a9c7cb; border-radius: 50%; transform: rotate(-25deg) scaleY(.76); }
+    .orbit::before, .orbit::after { position: absolute; inset: 30px; content: ""; border: 1px solid #b8d1d3; border-radius: 50%; }
+    .orbit::after { inset: 67px; }
+    .core { position: relative; display: grid; place-items: center; width: 125px; height: 125px; border-radius: 50%; background: var(--white); color: #507984; font-size: 18px; font-weight: 600; box-shadow: 0 8px 28px #365c6514; }
+    .orbit-label { position: absolute; padding: 6px 10px; border: 1px solid #cadbda; border-radius: 20px; background: #fffefaed; color: #50676b; font-size: 12px; }
+    .label-one { top: 61px; left: 36px; }.label-two { right: 20px; bottom: 81px; }.label-three { left: 33px; bottom: 55px; }
+    .section { padding: 69px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 29px; }
+    .section-index { margin: 0 0 7px; color: var(--sky-deep); }
+    h2 { margin: 0; font-size: clamp(27px, 3.5vw, 39px); line-height: 1.2; letter-spacing: -.035em; font-weight: 590; }
+    .section-intro { max-width: 400px; margin: 0; color: var(--muted); font-size: 14px; }
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; }
+    .about-note { padding: 17px 0 0; border-top: 2px solid #8fb9c0; color: #4b7279; font-size: 20px; line-height: 1.5; }
+    .about-copy p { margin: 0 0 15px; color: #586a6e; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .chip { padding: 5px 10px; border: 1px solid #d4dfdb; border-radius: 18px; background: #fffefa; color: #53666a; font-size: 12px; }
+    .education { background: #f1f7f5; }
+    .education-card { display: flex; justify-content: space-between; align-items: start; gap: 24px; padding: 22px 24px; border: 1px solid #dce6e1; border-radius: 7px; background: var(--white); }
+    .education-card h3 { margin: 0 0 5px; font-size: 18px; font-weight: 600; }
+    .education-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .education-date { color: var(--sky-deep); white-space: nowrap; }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .project { padding: 23px 23px 21px; border: 1px solid var(--line); border-radius: 7px; background: var(--white); }
+    .project:nth-child(2) { background: #fffdf6; }
+    .project-label { margin: 0 0 11px; color: var(--sky-deep); }
+    .project h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.4; font-weight: 600; letter-spacing: -.015em; }
+    .project p { margin: 0 0 12px; color: #607074; font-size: 14px; }
+    .project ul { margin: 0; padding-left: 19px; color: #53666a; font-size: 13px; }
+    .project li + li { margin-top: 5px; }
+    .tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
+    .tool { padding: 4px 8px; border-radius: 4px; background: var(--sky); color: #446a72; font-size: 11px; }
+    .tool.yellow { background: #f8f0d5; color: #80662f; }
+    .interests { display: grid; grid-template-columns: .8fr 1.2fr; gap: 55px; align-items: start; }
+    .interest-copy { margin: 17px 0; color: var(--muted); font-size: 14px; }
+    .complexity { color: #728181; }
+    .search-card { padding: 21px; border: 1px solid #dce3df; border-radius: 7px; background: var(--white); }
+    .search-label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+    .search-row { display: flex; gap: 8px; }
+    .search-row input { min-width: 0; flex: 1; padding: 10px 11px; border: 1px solid #cbd7d7; border-radius: 4px; background: white; color: var(--ink); font: inherit; font-size: 14px; }
+    .search-row input:focus { outline: 2px solid #a5cbd0; outline-offset: 1px; }
+    .search-row button { padding: 0 15px; border: 0; border-radius: 4px; background: #527f89; color: white; font: 550 14px var(--sans); cursor: pointer; }
+    .examples { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 18px; }
+    .examples button { padding: 5px 9px; border: 1px solid #d6e0df; border-radius: 15px; background: transparent; color: #566d71; font: 12px var(--sans); cursor: pointer; }
+    .examples button:hover { background: var(--sky); }
+    .index-label { margin: 0 0 8px; color: var(--muted); }
+    .sorted-list { display: flex; flex-wrap: wrap; gap: 6px 12px; padding: 10px 0; border-block: 1px solid var(--line); color: #8b9998; font: 11px/1.5 var(--mono); }
+    .sorted-list span.active { color: #477984; text-decoration: underline; text-underline-offset: 3px; }
+    .result { min-height: 80px; padding-top: 12px; }
+    .result p { margin: 0; }.result-title { margin-bottom: 4px!important; font-size: 14px; font-weight: 600; }.result-copy { color: var(--muted); font-size: 13px; }
+    .steps { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }.step { padding: 4px 6px; border-radius: 3px; background: #edf4f2; color: #597176; font: 10px var(--mono); }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 13px; }
+    .skill-card { padding: 18px; border-radius: 6px; background: var(--white); border: 1px solid var(--line); }
+    .skill-card:nth-child(2) { background: #f1f7f5; }.skill-card:nth-child(3) { background: #fffdf6; }
+    .skill-card h3 { margin: 0 0 7px; font-size: 15px; font-weight: 600; }.skill-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .contact { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .contact-copy { max-width: 600px; color: var(--muted); }
+    .contact-links { display: flex; gap: 9px; flex-wrap: wrap; }.contact-links a { padding: 8px 13px; border: 1px solid #cbd8d8; border-radius: 18px; text-decoration: none; font-size: 13px; }
+    footer { display: flex; justify-content: space-between; gap: 12px; padding: 19px 0 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    footer a { color: var(--ink); }
+    @media (max-width: 760px) {
+      .wrap { width: calc(100% - 34px); } nav { gap: 13px; } nav a:not(.nav-contact) { display: none; }
+      .hero { min-height: 0; grid-template-columns: 1fr; gap: 25px; padding: 48px 0 55px; }
+      .hero-art { min-height: 270px; grid-row: 1; }.hero-copy-block { grid-row: 2; }
+      .sun { width: 58px; height: 58px; top: 30px; right: 33px; }.orbit { width: 220px; height: 220px; }.core { width: 105px; height: 105px; }
+      .section { padding: 55px 0; }.section-heading { display: block; }.section-intro { margin-top: 13px; }
+      .about-grid,.interests { grid-template-columns: 1fr; gap: 25px; }.project-grid { grid-template-columns: 1fr; }.skills-grid { grid-template-columns: 1fr; }
+      .education-card { display: block; }.education-date { margin-top: 10px!important; }.contact { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 420px) { h1 { font-size: 41px; }.hero-art { min-height: 235px; }.orbit { width: 195px; height: 195px; }.label-one { left: 16px; }.label-three { left: 16px; }.label-two { right: 9px; } }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#home"><span class="brand-mark">S</span><span>Sooahn Cho</span></a>
+    <nav aria-label="Main navigation"><a href="./index.html">Home</a><a href="./personal.html">Personal</a><a href="#about">About</a><a href="#projects">Projects</a><a class="nav-contact" href="#contact">Contact</a></nav>
+  </header>
+  <main id="home">
+    <section class="wrap hero">
+      <div class="hero-copy-block">
+        <p class="mono eyebrow">Student · Seoul National University</p>
+        <h1>Curious about the <span>mind,</span><br>guided by data.</h1>
+        <p class="hero-copy">I’m <strong>Sooahn Cho</strong>, an Integrative Data Science student double majoring in Psychology, with a minor in Biological Sciences. I’m interested in cognitive neuroscience and how research can help us understand the relationship between brain, body, and behavior.</p>
+        <div class="actions"><a class="button button-primary" href="#projects">See academic projects</a><a class="button button-secondary" href="#about">About me</a></div>
+      </div>
+      <div class="hero-art" aria-label="Abstract illustration connecting data, brain, and behavior">
+        <span class="sun"></span><span class="orbit"></span><span class="core">curiosity</span>
+        <span class="orbit-label label-one">DATA</span><span class="orbit-label label-two">BRAIN</span><span class="orbit-label label-three">BEHAVIOR</span>
+      </div>
+    </section>
+    <section class="section" id="about"><div class="wrap about-grid">
+      <div><p class="mono section-index">01 / About</p><div class="about-note">Learning to connect quantitative methods with questions about people.</div></div>
+      <div class="about-copy"><h2>My academic direction</h2><p style="margin-top:16px">I entered university interested in quantitative and analytical thinking. Studying biology and psychology led me to questions about cognition, neuroscience, and health.</p><p>I’m especially interested in cognitive changes related to neurological conditions, brain-body interaction, neuroplasticity, and human memory. I’m continuing to build the methods and research experience to explore these questions.</p><div class="chips"><span class="chip">Cognitive neuroscience</span><span class="chip">Neurology</span><span class="chip">Brain-body interaction</span><span class="chip">Neuroplasticity</span><span class="chip">Human memory</span><span class="chip">Neural computation</span></div></div>
+    </div></section>
+    <section class="section education" id="education"><div class="wrap"><div class="section-heading"><div><p class="mono section-index">02 / Education</p><h2>Building a cross-disciplinary foundation.</h2></div><p class="section-intro">Training across data science, psychology, and biological sciences.</p></div><div class="education-card"><div><h3>Seoul National University</h3><p>B.S. in Integrative Data Science · Double Major in Psychology · Minor in Biological Sciences</p><p style="margin-top:9px">Selected coursework: Statistics, Probability Theory, Data Structures and Algorithms, Experimental Psychology, Brain and Cognitive Science, Genetics, and Biochemistry.</p></div><p class="mono education-date">MAR 2025 — PRESENT</p></div></div></section>
+    <section class="section" id="projects"><div class="wrap"><div class="section-heading"><div><p class="mono section-index">03 / Academic Projects</p><h2>Questions and methods I’ve explored.</h2></div><p class="section-intro">Course and academic work presented as student projects, with the methods and contributions described in my CV.</p></div><div class="project-grid">
+      <article class="project"><p class="mono project-label">DATA ANALYSIS · SNU · 2025</p><h3>Transportation access &amp; employment outcomes</h3><p>Examined relationships between accessible public transportation and employment outcomes for people with disabilities, using six public datasets.</p><ul><li>Preprocessed data and performed exploratory and correlation analyses.</li><li>Built regression models and examined interaction effects.</li><li>Reviewed model diagnostics, including multicollinearity with VIF.</li></ul><div class="tools"><span class="tool">Python</span><span class="tool">pandas · NumPy</span><span class="tool">Regression</span><span class="tool">VIF</span></div></article>
+      <article class="project"><p class="mono project-label">QUALITATIVE INTERVIEWS · SNU · 2026</p><h3>Caregiving &amp; healthcare experiences</h3><p>Conducted in-depth interviews with two parents about caring for children during hospitalization, treatment, and long-term health management.</p><ul><li>Analyzed narratives about healthcare systems and communication with medical professionals.</li><li>Explored health-information seeking and the impact of caregiving on everyday life.</li></ul><div class="tools"><span class="tool yellow">Interviewing</span><span class="tool yellow">Qualitative analysis</span><span class="tool yellow">Health communication</span></div></article>
+    </div></div></section>
+    <section class="section" id="interests"><div class="wrap interests">
+      <div><p class="mono section-index">04 / Interactive Feature · Binary Search</p><h2>Explore my research interests.</h2><p class="interest-copy">The topics below are stored alphabetically in a sorted array. Search for an exact topic to see binary search compare the middle value and narrow the remaining range at each step.</p><p class="mono complexity">SORTED ARRAY · O(log n)</p></div>
+      <div class="search-card"><label class="search-label" for="topicInput">Search the interest index</label><form class="search-row" id="searchForm"><input id="topicInput" type="search" placeholder="Try “human memory”" autocomplete="off"><button type="submit">Search</button></form><div class="examples" aria-label="Example topics"><button type="button" data-topic="brain-body interaction">brain-body interaction</button><button type="button" data-topic="human memory">human memory</button><button type="button" data-topic="neuroplasticity">neuroplasticity</button></div><p class="mono index-label">ALPHABETICAL INDEX</p><div class="sorted-list" id="topicList" aria-label="Sorted research interests"></div><div class="result" id="result" aria-live="polite"><p class="result-copy">Choose an example or enter a listed topic.</p></div></div>
+    </div></section>
+    <section class="section"><div class="wrap"><div class="section-heading"><div><p class="mono section-index">05 / Skills &amp; Training</p><h2>Methods and tools I’m developing.</h2></div></div><div class="skills-grid"><article class="skill-card"><h3>Programming &amp; analysis</h3><p>Python, R, pandas, NumPy, matplotlib, seaborn, and statsmodels.</p></article><article class="skill-card"><h3>Statistical methods</h3><p>Descriptive statistics, correlation, linear and logistic regression, and basic statistical modeling.</p></article><article class="skill-card"><h3>Certification</h3><p>Advanced Data Analytics Semi-Professional (ADsP), Korea Data Agency, 2026.</p></article></div></div></section>
+    <section class="section" id="contact"><div class="wrap contact"><div><p class="mono section-index">06 / Contact</p><h2>Get in touch</h2><p class="contact-copy">I’m happy to connect about cognitive neuroscience, psychology, data analysis, or research opportunities.</p></div><div class="contact-links"><a href="mailto:stella4324@snu.ac.kr">Email</a><a href="https://www.linkedin.com/in/stella4324" target="_blank" rel="noreferrer">LinkedIn</a></div></div></section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> Sooahn Cho</span><span>Seoul National University</span><a href="./index.html">Home</a></footer>
+  <script>
+    // Binary search over a sorted list. Each comparison removes half the remaining range.
+    const interests = [
+      { key: "brain-body interaction", description: "How bodily states and brain processes influence one another." },
+      { key: "cognitive neuroscience", description: "How neural systems support thought, perception, and behavior." },
+      { key: "data analysis", description: "Using statistical tools to explore patterns and evaluate evidence." },
+      { key: "human memory", description: "How experiences are encoded, retained, and retrieved." },
+      { key: "neural computation", description: "How neural activity can represent and process information." },
+      { key: "neurology", description: "The study of nervous-system function and its disorders." },
+      { key: "neuroplasticity", description: "How the nervous system changes with experience and over time." },
+      { key: "psychology", description: "The scientific study of mind and behavior." },
+      { key: "research methods", description: "Designing studies and choosing methods that make questions testable." }
+    ];
+    const list = document.getElementById("topicList");
+    const result = document.getElementById("result");
+    const input = document.getElementById("topicInput");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    list.innerHTML = interests.map((item, i) => `<span data-index="${i}">${item.key}</span>`).join("");
+    function binarySearch(target) {
+      let low = 0, high = interests.length - 1;
+      const steps = [];
+      while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        const current = interests[mid].key;
+        steps.push({ low, high, mid, current });
+        if (target === current) return { index: mid, steps };
+        if (target < current) high = mid - 1;
+        else low = mid + 1;
+      }
+      return { index: -1, steps };
+    }
+    function escapeHTML(value) {
+      return value.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+    function search(value) {
+      const target = value.trim().toLowerCase();
+      list.querySelectorAll("span").forEach(el => el.classList.remove("active"));
+      if (!target) { result.innerHTML = '<p class="result-copy">Enter a topic to begin.</p>'; return; }
+      const { index, steps } = binarySearch(target);
+      steps.forEach(step => list.querySelector(`[data-index="${step.mid}"]`)?.classList.add("active"));
+      const trace = steps.map((step, i) => `<span class="step">${i + 1}: [${step.low}–${step.high}] → ${step.current}</span>`).join("");
+      if (index >= 0) {
+        result.innerHTML = `<p class="result-title">Found “${interests[index].key}” in ${steps.length} ${steps.length === 1 ? "comparison" : "comparisons"}.</p><p class="result-copy">${interests[index].description}</p><div class="steps">${trace}</div>`;
+      } else {
+        result.innerHTML = `<p class="result-title">“${escapeHTML(target)}” is not in this index.</p><p class="result-copy">The search checked ${steps.length} middle values before the range became empty.</p><div class="steps">${trace}</div>`;
+      }
+    }
+    document.getElementById("searchForm").addEventListener("submit", event => { event.preventDefault(); search(input.value); });
+    document.querySelectorAll("[data-topic]").forEach(button => button.addEventListener("click", () => { input.value = button.dataset.topic; search(input.value); }));
+  </script>
+</body>
+</html>

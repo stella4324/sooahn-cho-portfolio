@@ -1,0 +1,2 @@
+https://YOUR-GITHUB-USERNAME.github.io/sooahn-cho-portfolio/
+I used binary search on an alphabetically sorted array of research interests in the “Explore my research interests” feature on cv.html. The feature shows the midpoint comparisons and how the search range shrinks for each selected topic.
